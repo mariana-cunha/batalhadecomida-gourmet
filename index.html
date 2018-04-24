@@ -6,26 +6,160 @@
     <title>Batalha de comida GOURMET</title>
     <link href="https://fonts.googleapis.com/css?family=Jua|Pacifico" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./assets/style/styles.css">
-    <link rel="stylesheet" href="./assets/style/media.css">
-    <link rel="stylesheet" href="./assets/style/main.css">
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="assets/style/styles.css">
+    <link rel="stylesheet" href="assets/style/media.css">
+    <link rel="stylesheet" href="assets/style/main.css">
 </head>
 <body>
     <header class="header-pattern">
         <h1>Batalha de comida <span style="font-family:'Jua'">GOURMET</span></h1>
     </header>
-    <section>
+
+<!------------------------------------------------HOME PAGE------------------------------------------------------------>
+    <div id="container-home-page">
+      <section>
         <h2>Categorias</h2>
         <div class="categories">
-            <button id="btn-bf" onclick="showList(breakfast)"><a href="#">Café da manhã</a></button>
-            <button id="btn-pf"><a href="#">PF</a></button>
-            <button id="btn-ds" onclick="showList(desserts)"><a href="#">Sobremesa</a></button>
-            <button id="btn-dr" onclick="showList(drinks)"><a href="#">Bebidas</a></button>
+          <button id="btn-bf" onclick="onClick(breakfast)"><a href="#">Café da manhã</a></button>
+          <button id="btn-pf" onclick="onClick(pF)"><a href="#">PF</a></button>
+          <button id="btn-ds" onclick="onClick(desserts)"><a href="#">Sobremesa</a></button>
+          <button id="btn-dr" onclick="onClick(drinks)"><a href="#">Bebidas</a></button>
         </div>
-    </section>
+      </section>
+    </div>
+
+<!------------------------------------------------MAIN PAGE------------------------------------------------------------>
+    <div id="container-main-page-hide">
+
+<!---------------------------------------------------16---------------------------------------------------------------->
+      <section id="round-of-16">
+        <div class="doubles">
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto1"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto2"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+        </div>
+
+        <div class="doubles">
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto3"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto4"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+        </div>
+
+        <div class="doubles">
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto5"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto6"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+        </div>
+
+        <div class="doubles">
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto7"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto8"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+        </div>
+
+        <div class="doubles">
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto9"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto10"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+        </div>
+
+        <div class="doubles">
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto11"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto12"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+        </div>
+
+        <div class="doubles">
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto13"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto14"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+        </div>
+
+        <div class="doubles">
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto15"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+          <div class="plate">
+            <a href="#"><img class="img-plate" src="assets\images\base\prato vazio.png" alt="foto16"></a>
+            <p class="plate-name">nome do prato</p>
+          </div>
+        </div>
+      </section>
+
+<!----------------------------------------------------8---------------------------------------------------------------->
+      <section id="quarter-finals">
+        <a href="#"><img class="option" src="#" alt="foto1" value="1"></a>
+        <a href="#"><img class="option" src="#" alt="foto2" value="2"></a>
+        <a href="#"><img class="option" src="#" alt="foto3" value="3"></a>
+        <a href="#"><img class="option" src="#" alt="foto4" value="4"></a>
+        <a href="#"><img class="option" src="#" alt="foto5" value="5"></a>
+        <a href="#"><img class="option" src="#" alt="foto6" value="6"></a>
+        <a href="#"><img class="option" src="#" alt="foto7" value="7"></a>
+        <a href="#"><img class="option" src="#" alt="foto8" value="8"></a>
+      </section>
+
+<!----------------------------------------------------4---------------------------------------------------------------->
+      <section id="semi-finals">
+        <a href="#"><img class="option" src="#" alt="foto1" value="1"></a>
+        <a href="#"><img class="option" src="#" alt="foto2" value="2"></a>
+        <a href="#"><img class="option" src="#" alt="foto3" value="3"></a>
+        <a href="#"><img class="option" src="#" alt="foto4" value="4"></a>
+      </section>
+
+<!----------------------------------------------------2---------------------------------------------------------------->
+      <section id="finals">
+        <a href="#"><img src="#" alt="foto1" value="1"></a>
+        <a href="#"><img src="#" alt="foto2" value="2"></a>
+      </section>
+
+<!--------------------------------------------------Result------------------------------------------------------------->
+
+      <section id="result">
+        <a href="#"><img src="#" alt="foto1" value="1"></a>
+      </section>
+    </div>
+
     <footer>
         <p>Produzido por Jéssica Arrais, Mariana Cunha e Rafaela Volkmann</p>
     </footer>
+
+    <script src="assets/js/main.js"></script>
+
 </body>
 </html>

@@ -1,37 +1,54 @@
 // import {pF} from "./pFDB";
 
+let imgPlate = document.querySelectorAll('.img-plate');
+let namePlate = document.querySelectorAll('.plate-name');
+let option = document.querySelectorAll('.option');
+let j = 0;
+let i = 0;
 let chosenList;
-let j = 1;
-let imgPlate = document.getElementsByClassName('img-imgPlate');
 
-const btnPF = document.getElementsByClassName('btn-pf');
+const onClick = (button) => {
+    chosenList = button;
 
-btnPF.showList = (button) => {
+    document.querySelector('#container-home-page').setAttribute('id', 'container-home-page-hide');
+    document.querySelector('#container-main-page-hide').setAttribute('id', 'container-main-page');
+
     button.forEach((element) => {
-        imgPlate.src = element.src;
-        console.log(imgPlate);
-        console.log(element);
-        console.log(j);
-        chosenList = button;
+        imgPlate[j].setAttribute('src', element.src);
+        imgPlate[j].setAttribute('value', element.name);
+        imgPlate[j].setAttribute('onclick', 'chosenMeal(chosenList, this.value)');
+        namePlate[j].textContent = element.name;
         j++;
     });
-    console.log(chosenList);
-    window.location.href = 'game.html';
 };
 
-
-let i = 1;
 const chosenMeal = (list, value) => {
-    let obj = list.indexOf(value);
-    let temp = document.getElementsByClassName(i.toString());
-    temp.innerHTML = `<img src='assets/DSC_0097.jpg' value=${obj.name} onclick="chosenMeal(chosenList, this.value)>`;
+    console.log(list, value);
+    let temp = list.find(ele => ele.name === value);
     console.log(temp);
+    // option[i].setAttribute('src', temp.src);
     i++;
 };
-
+// DB TEMPORARY
 const pF = [
     {
         name: 'Lasanha',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'Peixe',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'nhoque',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'Peixe',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'nhoque',
         src: 'assets/DSC_0097.jpg',
     },
     {
