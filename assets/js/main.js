@@ -1,5 +1,6 @@
 // import {pF} from "./pFDB";
 
+//------------------------------------------HOME AND MAIN PAGE----------------------------------------------------------
 let imgPlate = document.querySelectorAll('.img-plate');
 let namePlate = document.querySelectorAll('.plate-name');
 let j = 0;
@@ -23,12 +24,11 @@ const showChosenMeal = (list, value) => {
     setElement(elementFounded);
 };
 
-//--------------------------------------Function to set Attributes------------------------------------------------------
+//------------------------Function to set Attributes and to verify which is the result----------------------------------
 const setElement = (element) => {
-    if (j === (chosenList.length * 2) - 1) {
-        console.log(j);
-        // change page;
-        return;
+    if (j === (chosenList.length * 2) - 2) {
+        localStorage.setItem('result', JSON.stringify(element));
+        window.location.href = 'winner.html';
     }
     imgPlate[j].setAttribute('src', element.src);
     imgPlate[j].setAttribute('alt', element.name);
@@ -36,6 +36,28 @@ const setElement = (element) => {
     namePlate[j].textContent = element.name;
     j++;
 };
+
+//---------------------------------------------WINNER PAGE--------------------------------------------------------------
+let imgPlateWinner = document.querySelector('.img-plate-winner');
+let namePlateWinner = document.querySelector('.plate-name-winner');
+let result = JSON.parse(localStorage.getItem('result'));
+const btnAgain = document.querySelector('#btn-again');
+
+if (imgPlateWinner) {
+    console.log(result);
+    console.log(imgPlateWinner, namePlateWinner);
+    imgPlateWinner.setAttribute('src', result.src);
+    imgPlateWinner.setAttribute('alt', result.name);
+    namePlateWinner.textContent = result.name;
+
+    btnAgain.addEventListener('click', () => {
+        localStorage.clear();
+        window.location.href = 'index.html';
+    });
+}
+
+
+
 
 //--------------------------------------------DB Temporary--------------------------------------------------------------
 const pF = [
