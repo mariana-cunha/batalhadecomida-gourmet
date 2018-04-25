@@ -24,3 +24,23 @@ body {
 body .header-pattern {
   background-color: white;
 }
+
+#container-home-page {
+  display: block;
+}
+
+#container-main-page {
+  display: block;
+}
+
+#container-home-page-hide {
+  display: none;
+}
+
+#container-main-page-hide {
+  display: none;
+}
+
+img {
+  width: 120px;
+}

@@ -1,0 +1,5 @@
+const desserts = [
+    {},
+];
+
+export { desserts };

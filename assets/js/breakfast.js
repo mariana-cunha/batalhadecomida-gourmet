@@ -1,0 +1,5 @@
+const breakfast = [
+    {},
+];
+
+export { breakfast };
