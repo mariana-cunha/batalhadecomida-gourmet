@@ -2,64 +2,109 @@
 
 let imgPlate = document.querySelectorAll('.img-plate');
 let namePlate = document.querySelectorAll('.plate-name');
-let option = document.querySelectorAll('.option');
 let j = 0;
-let i = 0;
 let chosenList;
 
-const onClick = (button) => {
+//-------------------------------------------Show first List------------------------------------------------------------
+const showChosenList = (button) => {
     chosenList = button;
 
     document.querySelector('#container-home-page').setAttribute('id', 'container-home-page-hide');
     document.querySelector('#container-main-page-hide').setAttribute('id', 'container-main-page');
 
     button.forEach((element) => {
-        imgPlate[j].setAttribute('src', element.src);
-        imgPlate[j].setAttribute('value', element.name);
-        imgPlate[j].setAttribute('onclick', 'chosenMeal(chosenList, this.value)');
-        namePlate[j].textContent = element.name;
-        j++;
+        setElement(element);
     });
 };
 
-const chosenMeal = (list, value) => {
-    console.log(list, value);
-    let temp = list.find(ele => ele.name === value);
-    console.log(temp);
-    // option[i].setAttribute('src', temp.src);
-    i++;
+//-------------------------------------------Show Chosen Meal-----------------------------------------------------------
+const showChosenMeal = (list, value) => {
+    let elementFounded = list.find(ele => ele.name === value);
+    setElement(elementFounded);
 };
-// DB TEMPORARY
+
+//--------------------------------------Function to set Attributes------------------------------------------------------
+const setElement = (element) => {
+    if (j === (chosenList.length * 2) - 1) {
+        console.log(j);
+        // change page;
+        return;
+    }
+    imgPlate[j].setAttribute('src', element.src);
+    imgPlate[j].setAttribute('alt', element.name);
+    imgPlate[j].setAttribute('onclick', 'showChosenMeal(chosenList, this.alt)');
+    namePlate[j].textContent = element.name;
+    j++;
+};
+
+//--------------------------------------------DB Temporary--------------------------------------------------------------
 const pF = [
     {
         name: 'Lasanha',
+        src:  'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'Nhoque',
         src: 'assets/DSC_0097.jpg',
     },
     {
-        name: 'Peixe',
+        name: 'Risoto',
         src: 'assets/DSC_0097.jpg',
     },
     {
-        name: 'nhoque',
+        name: 'Feijoada',
         src: 'assets/DSC_0097.jpg',
     },
     {
-        name: 'Peixe',
+        name: 'Rodizio de camarao',
         src: 'assets/DSC_0097.jpg',
     },
     {
-        name: 'nhoque',
+        name: 'Bife e fritas',
         src: 'assets/DSC_0097.jpg',
     },
     {
-        name: 'Peixe',
+        name: 'Macarrao a bolonhesa',
         src: 'assets/DSC_0097.jpg',
     },
     {
-        name: 'nhoque',
+        name: 'Moqueca',
         src: 'assets/DSC_0097.jpg',
-    }
+    },
+    {
+        name: 'Pizza',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'Pastel',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'Omelete',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'Sushi',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'Yakissoba',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'Strogonofe',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'Salada',
+        src: 'assets/DSC_0097.jpg',
+    },
+    {
+        name: 'Ceviche',
+        src: 'assets/DSC_0097.jpg',
+    },
 ];
+
 const drinks = [
     {
         name: 'caipirinha',
