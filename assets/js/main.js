@@ -3,6 +3,7 @@
 //------------------------------------------HOME AND MAIN PAGE----------------------------------------------------------
 let imgPlate = document.querySelectorAll('.img-plate');
 let namePlate = document.querySelectorAll('.plate-name');
+let i = 0;
 let j = 0;
 let chosenList;
 
@@ -14,27 +15,71 @@ const showChosenList = (button) => {
     document.querySelector('#container-main-page-hide').setAttribute('id', 'container-main-page');
 
     button.forEach((element) => {
-        setElement(element);
+        validateElement(j, element);
     });
 };
 
 //-------------------------------------------Show Chosen Meal-----------------------------------------------------------
-const showChosenMeal = (list, value) => {
-    let elementFounded = list.find(ele => ele.name === value);
-    setElement(elementFounded);
+const showChosenMeal = (list, meal) => {
+    let elementFounded = list.find(ele => ele.name === meal);
+    validateElement(elementFounded.value, elementFounded);
 };
 
-//------------------------Function to set Attributes and to verify which is the result----------------------------------
-const setElement = (element) => {
+//------------------------------Function to validate and to verify which is the result----------------------------------
+const validateElement = (index, element) => {
     if (j === (chosenList.length * 2) - 2) {
         localStorage.setItem('result', JSON.stringify(element));
         window.location.href = 'winner.html';
     }
-    imgPlate[j].setAttribute('src', element.src);
-    imgPlate[j].setAttribute('alt', element.name);
-    imgPlate[j].setAttribute('onclick', 'showChosenMeal(chosenList, this.alt)');
-    namePlate[j].textContent = element.name;
+
+    if (index !== j) {
+        if (element.value === 0 || element.value === 1) {
+            i = 16;
+        } else if (element.value === 2 || element.value === 3) {
+            i = 17;
+        } else if (element.value === 4 || element.value === 5) {
+            i = 18;
+        } else if (element.value === 6 || element.value === 7) {
+            i = 19;
+        } else if (element.value === 8 || element.value === 9) {
+            i = 20;
+        } else if (element.value === 10 || element.value === 11) {
+            i = 21;
+        } else if (element.value === 12 || element.value === 13) {
+            i = 22;
+        } else if (element.value === 14 || element.value === 15) {
+            i = 23;
+        } else if (element.value === 16 || element.value === 17) {
+            i = 24;
+        } else if (element.value === 18 || element.value === 19) {
+            i = 25;
+        } else if (element.value === 20 || element.value === 21) {
+            i = 26;
+        } else if (element.value === 22 || element.value === 23) {
+            i = 27;
+        } else if (element.value === 24 || element.value === 25) {
+            i = 28;
+        } else if (element.value === 26 || element.value === 27) {
+            i = 29;
+        } else if (element.value === 28 || element.value === 29) {
+            i = 30;
+        }
+        setAttributes(i, element);
+    } else {
+        setAttributes(index, element);
+    }
     j++;
+};
+
+//--------------------------------------Function to set Attributes------------------------------------------------------
+const setAttributes = (index, element) => {
+    imgPlate[index].setAttribute('src', element.src);
+    imgPlate[index].setAttribute('alt', i.toString());
+    imgPlate[index].setAttribute('name', element.name);
+    imgPlate[index].setAttribute('onclick', 'showChosenMeal(chosenList, this.name)');
+    namePlate[index].textContent = element.name;
+    element.value = index;
+    console.log(element);
 };
 
 //---------------------------------------------WINNER PAGE--------------------------------------------------------------
